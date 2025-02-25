@@ -4,6 +4,7 @@ import Form from "./screens/Form/Form";
 import Griya from "./screens/Griya/Griya";
 import Oto from "./screens/Oto/Oto";
 import Mitraguna from "./screens/Mitraguna/Mitraguna";
+import Predict from "./screens/Predict/Predict";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           element={<Mitraguna />}
           key="mitraguna"
         ></Route>
+        <Route path="/predict" element={<Predict />} key="predict"></Route>
       </Routes>
     </>
   );
