@@ -30,12 +30,12 @@ const FinancingForm = () => {
       updatedFormData.credit_amount = "0";
     }
 
-    updatedFormData.credit_amount =
-      parseInt(updatedFormData.credit_amount, 10) * 8000;
-    updatedFormData.saving_accounts =
-      parseInt(updatedFormData.saving_accounts, 10) * 8000;
-    updatedFormData.existing_acc =
-      parseInt(updatedFormData.existing_acc, 10) * 8000;
+    updatedFormData.credit_amount = parseInt(updatedFormData.credit_amount, 10);
+    updatedFormData.saving_accounts = parseInt(
+      updatedFormData.saving_accounts,
+      10
+    );
+    updatedFormData.existing_acc = parseInt(updatedFormData.existing_acc, 10);
 
     Object.keys(updatedFormData).forEach((key) => {
       updatedFormData[key] = parseInt(updatedFormData[key], 10);
@@ -62,7 +62,7 @@ const FinancingForm = () => {
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         {[
-          { label: "Credit Amount (in DM)", name: "credit_amount" },
+          { label: "Credit Amount", name: "credit_amount" },
           { label: "Age", name: "age" },
           { label: "Dependants", name: "dependants" },
           { label: "Loan Duration (months)", name: "duration" },
