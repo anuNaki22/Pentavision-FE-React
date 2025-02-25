@@ -1,5 +1,7 @@
 import { useState } from "react";
 const FinancingForm = () => {
+  console.log ( process.env.VITE_BACKEND_HOST );
+  console.log ( process.env.VITE_BACKEND_PORT );
   const [formData, setFormData] = useState({
     credit_amount: "",
     age: "",
