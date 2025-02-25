@@ -1,13 +1,14 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import FinancingForm from "./components/FinancingForm";
+import { Routes, Route } from "react-router-dom";
+import Home from "./screens/Homescreen/Home";
+import Form from "./screens/Form/Form";
 
 function App() {
   return (
     <>
-      <FinancingForm></FinancingForm>
+      <Routes>
+        <Route path="/" element={<Home />} key="home"></Route>
+        <Route path="/form" element={<Form />} key="form"></Route>
+      </Routes>
     </>
   );
 }
