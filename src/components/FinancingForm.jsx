@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 const FinancingForm = () => {
   const [formData, setFormData] = useState({
     credit_amount: "",
@@ -42,7 +41,7 @@ const FinancingForm = () => {
     });
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/v1/predict", {
+      const response = await fetch(`http://${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}/api/v1/predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedFormData),
