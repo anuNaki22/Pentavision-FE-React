@@ -1,8 +1,16 @@
 import Accordion from "../../components/Accordion";
+import PriceForm from "../../components/PriceForm";
+import BannerProduct from "../../components/BannerProduct";
+import ProductGriya from "../../assets/product-griya.svg?react";
 
 const Griya = () => {
   return (
     <div className="space-y-4">
+      <BannerProduct
+        image={ProductGriya}
+        title="Griya BSI"
+        description="Tinggal Tenang, Cicilan Aman, Rumah Berkah!"
+      />
       <Accordion
         title="Syarat & Ketentuan"
         content={
@@ -38,6 +46,7 @@ const Griya = () => {
           </ul>
         }
       />
+      <PriceForm title="atau, Kamu Bisa Input Harga Sendiri Disini!" />
     </div>
   );
 };

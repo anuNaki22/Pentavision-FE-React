@@ -1,8 +1,16 @@
 import Accordion from "../../components/Accordion";
+import PriceForm from "../../components/PriceForm";
+import BannerProduct from "../../components/BannerProduct";
+import ProductOto from "../../assets/product-oto.svg?react";
 
 const Oto = () => {
   return (
     <div className="space-y-4">
+      <BannerProduct
+        image={ProductOto}
+        title="OTO BSI"
+        description="Setir Kendaraan Impian dengan Skema Syariah!"
+      />
       <Accordion
         title="Syarat & Ketentuan"
         content={
@@ -15,6 +23,7 @@ const Oto = () => {
           </ul>
         }
       />
+      <PriceForm title="atau, Kamu Bisa Input Harga Sendiri Disini!" />
     </div>
   );
 };

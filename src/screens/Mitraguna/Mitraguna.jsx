@@ -1,8 +1,16 @@
 import Accordion from "../../components/Accordion";
+import PriceForm from "../../components/PriceForm";
+import BannerProduct from "../../components/BannerProduct";
+import ProductMitraguna from "../../assets/product-mitraguna.svg?react";
 
 const Mitraguna = () => {
   return (
     <div className="space-y-4">
+      <BannerProduct
+        image={ProductMitraguna}
+        title="Mitraguna BSI"
+        description="Cerdas Membiayai, Ringan Dicicil, Berkah Dimiliki!"
+      />
       <Accordion
         title="Syarat & Ketentuan"
         content={
@@ -32,6 +40,7 @@ const Mitraguna = () => {
           </ul>
         }
       />
+      <PriceForm title="Mau Pinjaman Berapa? Cek Sekarang!" />
     </div>
   );
 };
