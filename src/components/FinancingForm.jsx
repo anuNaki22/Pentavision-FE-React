@@ -1,7 +1,5 @@
 import { useState } from "react";
 const FinancingForm = () => {
-  console.log ( process.env.VITE_BACKEND_HOST );
-  console.log ( process.env.VITE_BACKEND_PORT );
   const [formData, setFormData] = useState({
     credit_amount: "",
     age: "",
@@ -43,11 +41,16 @@ const FinancingForm = () => {
     });
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/api/v1/predict`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updatedFormData),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_HOST}:${
+          import.meta.env.VITE_BACKEND_PORT
+        }/api/v1/predict`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(updatedFormData),
+        }
+      );
       const data = await response.json();
       alert(`Prediction: ${data.prediction_text}`);
     } catch (error) {
