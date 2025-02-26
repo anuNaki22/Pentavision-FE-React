@@ -12,7 +12,7 @@ const Griya = () => {
         <BannerProduct
           image={ProductGriya}
           title="Griya BSI"
-          description="Tinggal Tenang, Cicilan Aman, Rumah Berkah!"
+          description="Cicilan Aman, Rumah Berkah, Hidup Tenang!"
         />
       </div>
       {/* Accordion dengan posisi overlap */}
