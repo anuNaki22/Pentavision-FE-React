@@ -3,8 +3,9 @@ const Footer = () => {
     <footer className="bg-linear-to-r from-[#259E9E] to-[#F7A22A] text-white text-center py-8 px-58 flex flex-col items-center">
       <div className="container flex items-center justify-between py-8">
         <img
-          src="src/assets/images/logo-putih.png"
+          src="src/assets/images/logo-footer.png"
           alt="Bank Syariah Indonesia"
+          className="w-[16rem]"
         />
         <div className="sitemap space-x-4">
           <a href="https://www.bankbsi.co.id/syarat-ketentuan/bsi">
