@@ -5,11 +5,17 @@ const FinancingCardList = () => {
       <FinancingCard
         name={"Griya"}
         source={"src/assets/images/griya-logo.png"}
+        path={"/griya"}
       />
-      <FinancingCard name={"OTO"} source={"src/assets/images/oto-logo.png"} />
+      <FinancingCard
+        name={"OTO"}
+        source={"src/assets/images/oto-logo.png"}
+        path={"/oto"}
+      />
       <FinancingCard
         name={"MitraGuna"}
         source={"src/assets/images/mitraguna-logo.png"}
+        path={"/mitraguna"}
       />
     </div>
   );
