@@ -13,7 +13,7 @@ const FinancingForm = () => {
     present_employment: "0",
     existing_acc: "0",
     age: "",
-    duration: "",
+    duration: "0",
     purpose: localStorage.getItem("financing_type") || "",
   });
 
