@@ -49,6 +49,7 @@ const FinancingForm = () => {
         `${import.meta.env.VITE_BACKEND_HOST}:${
           import.meta.env.VITE_BACKEND_PORT
         }/api/v1/predict`,
+        // "http://192.168.21.224:5000/api/v1/predict",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -107,10 +108,10 @@ const FinancingForm = () => {
               label: "Pendapatan",
               name: "salary",
               options: [
-                "Tidak memiliki pendapatan",
                 "Rp 0 – Rp 3.000.000",
                 "Rp 3.000.000 – Rp 5.000.000",
                 "Rp 5.000.000 – RP 15.000.000",
+                "> RP 15.000.000",
               ],
             },
             { label: "Jumlah Pembiayaan", name: "credit_amount" },
