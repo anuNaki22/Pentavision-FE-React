@@ -46,10 +46,17 @@ const FinancingForm = () => {
       const response = await fetch(`${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/api/v1/predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updatedFormData),
+        body: JSON.stringify({
+          data: updatedFormData,
+          save: true,
+        }),
       });
       const data = await response.json();
-      alert(`Prediction: ${data.prediction_text}`);
+      this.props.history.push({
+        pathname: '/predict',
+          state: data // your data array of objects
+      })
+      // alert(`Prediction: ${data.prediction_text}`);
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("An error occurred while submitting the form.");
