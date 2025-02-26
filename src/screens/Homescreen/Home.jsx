@@ -1,7 +1,6 @@
 import Header from "../../components/Header";
 import Banner from "../../components/Banner";
 import FinancingCardList from "../../components/FinancingCardList";
-import ProductCardList from "../../components/ProductCardList";
 const Home = () => {
   return (
     <div>
@@ -11,7 +10,6 @@ const Home = () => {
         Periksa kelayakan Anda untuk mendapatkan pembiayaan berkah disini
       </h3>
       <FinancingCardList />
-      <ProductCardList />
     </div>
   );
 };
