@@ -4,12 +4,9 @@ import tailwindcss from "@tailwindcss/vite";
 import svgr from "vite-plugin-svgr";
 import dotenv from "dotenv";
 
-dotenv.config(); 
+dotenv.config();
 
 export default defineConfig({
-  define: {
-    "process.env": JSON.stringify(process.env), // Expose all env variables
-  },
   base: "/",
   plugins: [
     react(),

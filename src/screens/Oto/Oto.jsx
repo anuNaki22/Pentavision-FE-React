@@ -2,8 +2,7 @@ import Accordion from "../../components/Accordion";
 import PriceForm from "../../components/PriceForm";
 import BannerProduct from "../../components/BannerProduct";
 import ProductOto from "../../assets/product-oto.svg?react";
-import Card from "../../components/Card";
-import CardFinancing from "../../components/CardFinancing";
+import ProductCardList from "../../components/ProductCardList";
 
 const Oto = () => {
   return (
@@ -29,8 +28,7 @@ const Oto = () => {
           }
         />
       </div>
-      {/* <Card />
-      <CardFinancing /> */}
+      <ProductCardList></ProductCardList>
       <PriceForm title="atau, Kamu Bisa Input Harga Sendiri Disini!" />
     </div>
   );
