@@ -109,7 +109,7 @@ const Predict = () => {
               Mau lanjutkan proses pembiayaan? Yuk, download
             </p>
             <button
-              className="bg-black text-white px-4 py-2 rounded-lg flex-row justify-center items-center hover:transform hover:scale-105 transition-transform duration-300"
+              className=" text-white px-4 py-2 rounded-lg flex-row justify-center items-center hover:transform hover:scale-105 transition-transform duration-300"
               onClick={() =>
                 window.open(
                   "https://play.google.com/store/apps/details?id=co.id.bankbsi.superapp&hl=en",
