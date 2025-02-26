@@ -1,7 +1,7 @@
 import FinancingCard from "./FinancingCard";
 const FinancingCardList = () => {
   return (
-    <div className="flex justify-between space-x-24 my-16 px-58">
+    <div className="flex justify-between space-x-24 mt-16 px-58 mb-48">
       <FinancingCard
         name={"Griya"}
         source={"src/assets/images/griya-logo.png"}
