@@ -61,19 +61,8 @@ const FinancingForm = () => {
       const data = await response.json();
       // alert(`Prediction: ${data.prediction_text}`);
 
-      if (data.prediction_text === "APPROVED") {
-        localStorage.setItem("calc_result", JSON.stringify(data.calc_result));
-        localStorage.setItem(
-          "prediction_text",
-          JSON.stringify(data.prediction_text)
-        );
-      } else {
-        localStorage.setItem(
-          "prediction_text",
-          JSON.stringify(data.prediction_text)
-        );
-        // alert("Prediction: REJECTED");
-      }
+      localStorage.setItem("result", JSON.stringify(data));
+      console.log(data);
       navigate("/predict");
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -99,30 +88,29 @@ const FinancingForm = () => {
               options: [
                 "Tidak memiliki riwayat pembiayaan",
                 "Pernah memiliki pembiayaan di bank ini",
-                "Sedang memiliki pembiayaan",
-                "Past Due",
-                "Loan Outside This Bank",
+                "Sedang memiliki pembiayaan (cicilan lancar)",
+                "Pernah memiliki tunggakan",
+                "Memiliki pembiayaan di bank lain",
               ],
             },
             {
               label: "Aset",
               name: "property",
               options: [
-                "No Property",
+                "Tidak memiliki Properti",
                 "Real Estate",
                 "Life Insurance",
-                "Car/Other",
+                "Car / lainnya",
               ],
             },
             {
               label: "Pendapatan",
               name: "salary",
               options: [
-                "No Savings",
-                "0 - 5M",
-                "5M - 25M",
-                "25M - 50M",
-                "> 50M",
+                "Tidak memiliki pendapatan",
+                "Rp 0 – Rp 3.000.000",
+                "Rp 3.000.000 – Rp 5.000.000",
+                "Rp 5.000.000 – RP 15.000.000",
               ],
             },
             { label: "Jumlah Pembiayaan", name: "credit_amount" },
@@ -174,10 +162,10 @@ const FinancingForm = () => {
               label: "Jumlah saldo rekening",
               name: "existing_acc",
               options: [
-                "Tidak memiliki gaji",
-                "Rp 0 – Rp 3.000.000",
-                "Rp 3.000.000 – Rp 5.000.000",
-                "Rp 5.000.000 – Rp 15.000.000",
+                "Tidak memiliki tabungan",
+                "Rp 0 – Rp 5.000.000",
+                "Rp 5.000.000 – Rp 10.000.000",
+                "> Rp 10.000.000",
               ],
             },
             { label: "Usia", name: "age" },
