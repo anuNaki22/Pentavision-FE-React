@@ -7,13 +7,14 @@ import ProductCardList from "../../components/ProductCardList";
 const Oto = () => {
   return (
     <div className="space-y-4 pb-32">
-      <div className="relative z-0">
+      <div className="flex justify-center">
         <BannerProduct
           image={ProductOto}
           title="OTO BSI"
           description="Setir Kendaraan Impian dengan Skema Syariah!"
         />
       </div>
+
       <div className="-mt-28 mb-16 relative z-10">
         <Accordion
           title="Syarat & Ketentuan"
@@ -28,7 +29,7 @@ const Oto = () => {
           }
         />
       </div>
-      <ProductCardList></ProductCardList>
+      <ProductCardList type="oto"></ProductCardList>
       <PriceForm title="atau, Kamu Bisa Input Harga Sendiri Disini!" />
     </div>
   );
