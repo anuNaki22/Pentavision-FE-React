@@ -17,7 +17,7 @@ const BackButton = ({ to = "/" }) => {
         xmlns="http://www.w3.org/2000/svg"
         className="md:w-[118px] md:h-[118px]"
       >
-        <g filter="url(#filter0_dd_2129_60850)">
+        <g filter="url(#shadow)">
           <rect x="28" y="18" width="62" height="62" rx="31" fill="white" />
           <path
             d="M68.159 48.9975H50.5454M50.5454 48.9975L59 40.543M50.5454 48.9975L59 57.4521"
@@ -27,6 +27,25 @@ const BackButton = ({ to = "/" }) => {
             strokeLinejoin="round"
           />
         </g>
+        <defs>
+          <filter
+            id="shadow"
+            x="24"
+            y="14"
+            width="70"
+            height="70"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feDropShadow
+              dx="0"
+              dy="4"
+              stdDeviation="4"
+              floodColor="black"
+              floodOpacity="0.2"
+            />
+          </filter>
+        </defs>
       </svg>
     </div>
   );
