@@ -2,6 +2,7 @@ import Accordion from "../../components/Accordion";
 import PriceForm from "../../components/PriceForm";
 import BannerProduct from "../../components/BannerProduct";
 import ProductGriya from "../../assets/product-griya.svg?react";
+import ProductCardList from "../../components/ProductCardList";
 
 const Griya = () => {
   return (
@@ -11,7 +12,7 @@ const Griya = () => {
         <BannerProduct
           image={ProductGriya}
           title="Griya BSI"
-          description="Tinggal Tenang, Cicilan Aman, Rumah Berkah!"
+          description="Cicilan Aman, Rumah Berkah, Hidup Tenang!"
         />
       </div>
       {/* Accordion dengan posisi overlap */}
@@ -54,6 +55,8 @@ const Griya = () => {
           }
         />
       </div>
+
+      <ProductCardList type="griya"></ProductCardList>
       <PriceForm title="atau, Kamu Bisa Input Harga Sendiri Disini!" />
     </div>
   );
