@@ -3,6 +3,13 @@ import { useNavigate } from "react-router-dom";
 const FinancingCard = ({ name, source, path }) => {
   const navigate = useNavigate();
   const handlingClick = (path) => {
+    if (name == "Griya") {
+      localStorage.setItem("financing_type", 3);
+    } else if (name == "Mitraguna") {
+      localStorage.setItem("financing_type", 2);
+    } else {
+      localStorage.setItem("financing_type", 1);
+    }
     navigate(path);
   };
   return (
