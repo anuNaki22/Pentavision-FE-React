@@ -35,7 +35,7 @@ const ProductCard = ({ type, item }) => {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/form");
-    localStorage.setItem("price", item.price);
+    localStorage.setItem("credit_amount", item.price);
   };
 
   return (
