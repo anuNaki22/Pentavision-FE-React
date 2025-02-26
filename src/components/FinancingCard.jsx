@@ -41,7 +41,7 @@ const FinancingCard = ({ name, source, path }) => {
   return (
     <div
       className="card relative rounded-lg flex flex-col justify-between cursor-pointer hover:transform hover:scale-105 transition-transform duration-300 w-full sm:w-[18rem] md:w-[20rem] lg:w-[22rem]"
-      onClick={handlingClick}
+      onClick={() => handlingClick(path)}
     >
       {/* Gradient Background */}
       <div className="absolute bottom-0 w-full h-[12rem] rounded-lg bg-gradient-to-t from-[#00696d] to-transparent"></div>
