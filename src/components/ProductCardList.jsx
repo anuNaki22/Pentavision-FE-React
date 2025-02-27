@@ -29,13 +29,13 @@ const ProductCardList = ({ type }) => {
       <div className="relative">
         <button
           ref={prevRef}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full ml-6"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full ml-6 cursor-pointer"
         >
           <ChevronLeft size={30} />
         </button>
         <button
           ref={nextRef}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full mr-6"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full mr-6 cursor-pointer"
         >
           <ChevronRight size={30} />
         </button>
