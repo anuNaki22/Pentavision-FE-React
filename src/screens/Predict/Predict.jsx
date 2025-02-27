@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Simulation from "../../components/Simulation";
-import HomeIcon from "../../assets/home-icon.svg?react";
 import LogoByond from "../../assets/logo-byond.svg?react";
+import HomeButton from "../../components/HomeButton";
 
 const Predict = () => {
   const [result, setResult] = useState(null);
@@ -36,19 +36,21 @@ const Predict = () => {
 
   return (
     <div className="my-0 flex flex-col items-center justify-center">
-      <div
-        className="absolute left-[10vw] top-[20vh] rounded-[50%] p-2 shadow-[0px_1px_5px_0.5px] hover:transition-transform hover:scale-110 cursor-pointer"
-        onClick={() => (window.location.href = "/")}
-      >
-        <HomeIcon />
-      </div>
+      <HomeButton className="top-4 left-4 md:top-10 md:left-10" />
       <div className="flex flex-col items-center mt-20">
         <div className="max-w-[600px] flex-col items-center text-justify self-center">
-          <h2 className="text-2xl text-center my-2 text-[#00696D]">
+          <h2
+            className={`text-2xl font-semibold text-center mt-28 my-2 ${
+              result.prediction_text === "APPROVED"
+                ? "text-[#00696D]"
+                : "text-[#ed8b00]"
+            }`}
+          >
             {result.prediction_text === "APPROVED"
               ? "Alhamdulillah"
               : "Mohon Maaf"}
           </h2>
+
           <div className="flex justify-center mb-4">
             {result.prediction_text === "APPROVED" ? (
               <p id="result-string">
@@ -117,7 +119,7 @@ const Predict = () => {
                 )
               }
             >
-              <LogoByond className="w-[90%] h-[90%]" />
+              <LogoByond className="w-[90%] h-[90%] cursor-pointer" />
             </button>
           </div>
         </>
