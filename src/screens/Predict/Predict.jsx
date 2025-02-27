@@ -10,8 +10,8 @@ const Predict = () => {
     const storedResult = JSON.parse(window.localStorage.getItem("result"));
 
     if (!storedResult || storedResult.prediction_text === "null") {
-      // window.localStorage.removeItem("result"); // Bersihkan localStorage
-      // window.location.href = "/"; // Redirect ke home
+      window.localStorage.removeItem("result"); // Bersihkan localStorage
+      window.location.href = "/"; // Redirect ke home
     } else {
       setResult(storedResult);
       //   window.localStorage.removeItem("result"); // Hapus setelah diambil
