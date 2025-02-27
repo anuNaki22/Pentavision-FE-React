@@ -108,7 +108,9 @@ const FinancingForm = ({ credit_amount, purpose }) => {
   return (
     <div
       id="form"
-      className="max-w-full w-full md:w-[600px] lg:w-[1037px] bg-white rounded-lg shadow-lg p-4 md:p-6 lg:p-8 mx-auto mb-16"
+      className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg 
+      bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 lg:p-10 mx-auto mb-16"
+      // className="w-full p-5 bg-white rounded-xl border border-[#ed8b00] flex flex-col md:flex-row items-center gap-4 md:gap-6"
     >
       <div className="flex justify-center items-center min-h-screen">
         <div className="max-w-2xl mx-auto p-6">
