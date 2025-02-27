@@ -20,7 +20,7 @@ const FinancingForm = () => {
   const [save, setSave] = useState(0);
 
   const [isAgreedPrimary, setIsAgreedPrimary] = useState(false);
-  const [isAgreedSecondary, setIsAgreedSecondary] = useState(false);
+  // const [isAgreedSecondary, setIsAgreedSecondary] = useState(false);
 
   const formatRupiah = (value) => {
     if (!value) return "Rp 0";

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Simulation from "../../components/Simulation";
+// import Simulation from "../../components/Simulation";
 import LogoByond from "../../assets/logo-byond.svg?react";
 import HomeButton from "../../components/HomeButton";
 

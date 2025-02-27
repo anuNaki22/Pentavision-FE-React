@@ -1,35 +1,6 @@
 /* eslint-disable react/prop-types */
-// const ProductCard = ({ type, item }) => {
-//   return (
-//     <div className="max-w-xs relative shadow-2xl rounded-lg overflow-hidden mx-auto">
-//       <div
-//         className={`harga absolute flex items-center justify-center inset-0  text-white text-2xl font-bold py-2 px-2 text-center ${
-//           type === "oto" ? "" : "mt-16"
-//         }`}
-//       >
-//         <p className="tracking-wide bg-[#003739] py-2 px-6 mt-16 rounded-lg ">
-//           Rp {item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
-//         </p>
-//       </div>
-//       <div className="py-4 bg-white">
-//         <img src={item.image} alt={item.name} />
-//       </div>
-//       <div className={`bg-[#3e9ea2]  py-12 px-2 text-white`}>
-//         <p
-//           className={`text-center text-4xl ${
-//             type === "oto" ? "block" : "hidden"
-//           }`}
-//         >
-//           {item.name}
-//         </p>
-//       </div>
-//     </div>
-//   );
-// };
 
 import { useNavigate } from "react-router-dom";
-
-// export default ProductCard;
 
 const ProductCard = ({ type, item }) => {
   const navigate = useNavigate();
