@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 // import Simulation from "../../components/Simulation";
 import LogoByond from "../../assets/logo-byond.svg?react";
-import HomeButton from "../../components/HomeButton";
+import { House } from "lucide-react";
 
 const Predict = () => {
   const [result, setResult] = useState(null);
@@ -35,23 +35,24 @@ const Predict = () => {
   }
 
   return (
+    <>
     <div className="my-0 flex flex-col items-center justify-center">
-      <HomeButton className="top-4 left-4 md:top-10 md:left-10" />
+      <House size={50} className="absolute top-10 left-10 md:top-30 md:left-30 rounded-[50%] shadow-[0px_2px_8px_0.5px] p-2 hover:transform hover:scale-110 transition ease-in-out" onClick={() => window.location.href="/"}/>
       <div className="flex flex-col items-center mt-20">
-        <div className="max-w-[600px] flex-col items-center text-justify self-center">
+        <div className="max-w-[800px] flex-col items-center text-justify self-center">
           <h2
-            className={`text-2xl font-semibold text-center mt-28 my-2 ${
+            className={`text-5xl font-semibold text-center mt-28 my-2 ${
               result.prediction_text === "APPROVED"
-                ? "text-[#00696D]"
-                : "text-[#ed8b00]"
+              ? "text-[#00696D]"
+              : "text-[#ed8b00]"
             }`}
-          >
+            >
             {result.prediction_text === "APPROVED"
               ? "Alhamdulillah"
               : "Mohon Maaf"}
           </h2>
 
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-4 text-xl">
             {result.prediction_text === "APPROVED" ? (
               <p id="result-string">
                 Cek detail di bawah untuk melihat pilihan tenor, margin, dan
@@ -64,7 +65,7 @@ const Predict = () => {
                 <a
                   href="mailto:bsifund@bankbsi.co.id"
                   className="font-bold underline text-[#3E9EA2]"
-                >
+                  >
                   hubungi kami
                 </a>{" "}
                 untuk solusi terbaik. InsyaAllah, ada jalan yang berkah untukmu.
@@ -74,7 +75,7 @@ const Predict = () => {
           </div>
           {result.prediction_text === "APPROVED" && (
             <>
-              <div className="w-full flex-row justify-between items-center text-center self-center flex bg-[#00696D] rounded-md p-4 mb-2 text-white">
+              <div className="w-full flex-row justify-between items-center text-center self-center flex bg-[#00696D] rounded-md p-6 mb-2 text-white text-2xl">
                 <div className="flex-col flex-2 items-start gap-2 text-start font-bold">
                   <div>Tenor</div>
                   {/* <div>Total Pembayaran Pertama</div> */}
@@ -88,13 +89,13 @@ const Predict = () => {
                   <div>{formatRupiah(parseInt(data_now[0].installment))}</div>
                 </div>
               </div>
-              <div className="w-full text-[#3E9EA2]">
+              <div className="w-full text-[#3E9EA2] text-xl">
                 Disclaimer: Hasil di atas merupakan angka estimasi, untuk info
                 lebih lanjut{" "}
                 <a
                   href="mailto:bsifund@bankbsi.co.id"
                   className="font-bold underline"
-                >
+                  >
                   hubungi kami
                 </a>
                 .
@@ -107,24 +108,25 @@ const Predict = () => {
       {result.prediction_text === "APPROVED" && (
         <>
           <div className="flex items-center justify-center gap-5 p-5 mb-10">
-            <p className="text-xl font-semibold">
+            <p className="text-2xl font-semibold">
               Mau lanjutkan proses pembiayaan? Yuk, download
             </p>
             <button
-              className=" text-white px-4 py-2 rounded-lg flex-row justify-center items-center hover:transform hover:scale-105 transition-transform duration-300"
+              className=" text-white px-2 py-2 rounded-lg flex-row justify-center items-center hover:transform hover:scale-105 transition-transform duration-300"
               onClick={() =>
                 window.open(
                   "https://play.google.com/store/apps/details?id=co.id.bankbsi.superapp&hl=en",
                   "_blank"
                 )
               }
-            >
+              >
               <LogoByond className="w-[90%] h-[90%] cursor-pointer" />
             </button>
           </div>
         </>
       )}
     </div>
+      </>
   );
 };
 

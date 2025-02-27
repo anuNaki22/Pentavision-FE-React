@@ -10,8 +10,8 @@ const HomeButton = ({ to = "/", className = "" }) => {
       onClick={() => navigate(to)}
     >
       <svg
-        width="240"
-        height="240"
+        width="100"
+        height="100"
         viewBox="0 0 240 240"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ const HomeButton = ({ to = "/", className = "" }) => {
             strokeLinejoin="round"
           />
         </g>
-        <defs>
+        {/* <defs>
           <filter
             id="shadow"
             x="85"
@@ -61,7 +61,7 @@ const HomeButton = ({ to = "/", className = "" }) => {
               result="shape"
             />
           </filter>
-        </defs>
+        </defs> */}
       </svg>
     </div>
   );
