@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 
-const BackButton = ({ to = "/" }) => {
+const BackButton = ({ to = -1, className = "" }) => {
   const navigate = useNavigate();
 
   return (
     <div
       data-svg-wrapper
-      className="left-[10%] md:left-[90px] top-[16%] absolute cursor-pointer transition-all duration-300 ease-in-out hover:scale-110 hover:opacity-80"
+      className={`absolute cursor-pointer transition-all duration-300 ease-in-out hover:scale-110 hover:opacity-80 ${className}`}
       onClick={() => navigate(to)}
     >
       <svg

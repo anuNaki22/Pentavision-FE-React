@@ -8,7 +8,7 @@ const BannerProduct = ({ image: ProductImage, title, description }) => {
       <div className="absolute inset-0 w-full h-full" />
 
       {/* Tombol Back */}
-      <BackButton to="/" />
+      <BackButton to="/" className="top-4 left-4 md:top-10 md:left-10" />
 
       {/* Kotak kuning sebagai container teks */}
       <div className="relative left-1/2 -translate-x-1/2 top-[45%] w-[90%] max-w-[1036px] h-[93px] bg-[#f1b434] rounded-[10px] flex items-center justify-start px-6">
