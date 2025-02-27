@@ -58,6 +58,26 @@ const griya = [
     price: 1200000000,
     image: "src/assets/images/griya/griya-4.png",
   },
+  {
+    id: 5,
+    price: 1000000000,
+    image: "src/assets/images/griya/griya-1.png",
+  },
+  {
+    id: 6,
+    price: 1500000000,
+    image: "src/assets/images/griya/griya-2.png",
+  },
+  {
+    id: 7,
+    price: 800000000,
+    image: "src/assets/images/griya/griya-3.png",
+  },
+  {
+    id: 8,
+    price: 1200000000,
+    image: "src/assets/images/griya/griya-4.png",
+  },
 ];
 
 export { oto, griya };
