@@ -3,10 +3,12 @@ import PriceForm from "../../components/PriceForm";
 import BannerProduct from "../../components/BannerProduct";
 import ProductGriya from "../../assets/product-griya.svg?react";
 import ProductCardList from "../../components/ProductCardList";
-
+import FinancingForm from "../../components/FinancingForm";
+import { useState } from "react";
 const Griya = () => {
+  const [credit_amount, setCredit] = useState(0);
   return (
-    <div className="space-y-4 pb-32">
+    <div>
       {/* BannerProduct dengan z-0 agar tidak menutupi Accordion */}
       <div className="relative z-0">
         <BannerProduct
@@ -15,8 +17,14 @@ const Griya = () => {
           description="Cicilan Aman, Rumah Berkah, Hidup Tenang!"
         />
       </div>
-      {/* Accordion dengan posisi overlap */}
-      <div className="-mt-28 mb-16 relative z-10">
+      <ProductCardList type="griya" setCredit={setCredit}></ProductCardList>
+      <PriceForm
+        title="atau, Kamu Bisa Input Harga Sendiri Disini!"
+        setCredit={setCredit}
+      />
+      <div className="w-full pb-20 pt-32 min-h-screen relative mx-auto bg-[#00696D]">
+        <FinancingForm credit_amount={credit_amount} purpose="3" />
+
         <Accordion
           title="Syarat & Ketentuan"
           content={
@@ -55,9 +63,6 @@ const Griya = () => {
           }
         />
       </div>
-
-      <ProductCardList type="griya"></ProductCardList>
-      <PriceForm title="atau, Kamu Bisa Input Harga Sendiri Disini!" />
     </div>
   );
 };

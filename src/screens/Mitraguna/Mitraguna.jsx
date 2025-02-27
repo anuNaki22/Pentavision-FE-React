@@ -2,10 +2,14 @@ import Accordion from "../../components/Accordion";
 import PriceForm from "../../components/PriceForm";
 import BannerProduct from "../../components/BannerProduct";
 import ProductMitraguna from "../../assets/product-mitraguna.svg?react";
+import FinancingForm from "../../components/FinancingForm";
+import { useState } from "react";
 
 const Mitraguna = () => {
+  const [credit_amount, setCredit] = useState(0);
+
   return (
-    <div className="space-y-4 pb-32">
+    <div>
       <div className="relative z-0">
         <BannerProduct
           image={ProductMitraguna}
@@ -13,7 +17,12 @@ const Mitraguna = () => {
           description="Cerdas Membiayai, Ringan Dicicil, Berkah Dimiliki!"
         />
       </div>
-      <div className="-mt-28 mb-16 relative z-10">
+      <PriceForm
+        title="Mau Pinjaman Berapa? Cek Sekarang!"
+        setCredit={setCredit}
+      />
+      <div className="w-full pb-20 pt-32 min-h-screen relative mx-auto bg-[#00696D]">
+        <FinancingForm credit_amount={credit_amount} purpose="2" />
         <Accordion
           title="Syarat & Ketentuan"
           content={
@@ -44,7 +53,6 @@ const Mitraguna = () => {
           }
         />
       </div>
-      <PriceForm title="Mau Pinjaman Berapa? Cek Sekarang!" />
     </div>
   );
 };

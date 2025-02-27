@@ -8,7 +8,7 @@ import { oto, griya } from "../assets/data";
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const ProductCardList = ({ type }) => {
+const ProductCardList = ({ type, setCredit }) => {
   let data = [];
 
   if (type === "oto") {
@@ -21,7 +21,7 @@ const ProductCardList = ({ type }) => {
   const nextRef = useRef(null);
 
   return (
-    <div className="relative mb-16">
+    <div className="relative mb-16 mt-16">
       <h2 className="text-center font-bold text-4xl text-[#004F52] mb-16">
         Pilih {type === "oto" ? "Mobil" : "Rumah"} Impian Kamu!
       </h2>
@@ -40,28 +40,28 @@ const ProductCardList = ({ type }) => {
           <ChevronRight size={30} />
         </button>
         <Swiper
-          modules={[FreeMode, Navigation, Autoplay, Scrollbar]}
+          modules={[FreeMode, Autoplay, Scrollbar]}
           spaceBetween={120} // Increase gap between items
           slidesPerView="auto" // Allow natural width
           freeMode={{ enabled: true, momentum: false }} // Prevent snapping
           grabCursor={true} // Enable drag interaction
           className="pb-10"
-          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+          // navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop={true} // Enable infinite scrolling
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => {
             setTimeout(() => {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
+              // swiper.params.navigation.prevEl = prevRef.current;
+              // swiper.params.navigation.nextEl = nextRef.current;
+              // swiper.navigation.init();
+              // swiper.navigation.update();
             });
           }}
         >
           {data.map((item, index) => (
             <SwiperSlide key={index} className="!w-auto">
-              <ProductCard item={item} type={type} />
+              <ProductCard item={item} type={type} setCredit={setCredit} />
             </SwiperSlide>
           ))}
         </Swiper>

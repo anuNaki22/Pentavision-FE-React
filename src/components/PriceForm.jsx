@@ -9,6 +9,7 @@ const formatRupiah = (value) => {
 
 const PriceForm = ({
   title = "atau, Kamu Bisa Input Harga Sendiri Disini!",
+  setCredit,
 }) => {
   const [price, setPrice] = useState("");
   const navigate = useNavigate();
@@ -19,8 +20,9 @@ const PriceForm = ({
 
   const handleSubmit = () => {
     const numericPrice = price.replace(/\D/g, ""); // Ambil angka saja
-    localStorage.setItem("credit_amount", numericPrice); // Simpan di localStorage
-    navigate("/form"); // Redirect ke halaman FinancingForm
+    // localStorage.setItem("credit_amount", numericPrice); // Simpan di localStorage
+    // navigate("/form"); // Redirect ke halaman FinancingForm
+    setCredit(numericPrice);
   };
 
   return (
@@ -41,17 +43,19 @@ const PriceForm = ({
               className="w-full p-4 bg-gray-50 rounded-lg border-2 border-[#e5e7ea] text-lg md:text-xl text-[#004f52] focus:outline-none focus:ring-2 focus:ring-[#178488]"
             />
           </div>
-          <button
-            onClick={handleSubmit}
-            disabled={!price}
-            className={`w-full md:w-[250px] h-12 md:h-14 py-3 md:py-4 rounded-lg flex justify-center items-center text-lg font-semibold leading-normal transition-all duration-300 ${
-              price
-                ? "bg-[#178488] text-white cursor-pointer"
-                : "bg-gray-300 text-gray-500 cursor-not-allowed"
-            }`}
-          >
-            Simulasi
-          </button>
+          <a href="#form">
+            <button
+              onClick={handleSubmit}
+              disabled={!price}
+              className={`w-full md:w-[250px] h-12 md:h-14 py-3 md:py-4 rounded-lg flex justify-center items-center text-lg font-semibold leading-normal transition-all duration-300 ${
+                price
+                  ? "bg-[#178488] text-white cursor-pointer"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              }`}
+            >
+              Simulasi
+            </button>
+          </a>
         </div>
       </div>
     </div>

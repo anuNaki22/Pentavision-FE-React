@@ -3,10 +3,14 @@ import PriceForm from "../../components/PriceForm";
 import BannerProduct from "../../components/BannerProduct";
 import ProductOto from "../../assets/product-oto.svg?react";
 import ProductCardList from "../../components/ProductCardList";
+import FinancingForm from "../../components/FinancingForm";
+import { useState } from "react";
 
 const Oto = () => {
+  const [credit_amount, setCredit] = useState(0);
+
   return (
-    <div className="space-y-4 pb-32">
+    <div>
       <div className="flex justify-center">
         <BannerProduct
           image={ProductOto}
@@ -15,7 +19,13 @@ const Oto = () => {
         />
       </div>
 
-      <div className="-mt-28 mb-16 relative z-10">
+      <ProductCardList type="oto" setCredit={setCredit}></ProductCardList>
+      <PriceForm
+        title="atau, Kamu Bisa Input Harga Sendiri Disini!"
+        setCredit={setCredit}
+      />
+      <div className="w-full pb-20 pt-32 min-h-screen relative mx-auto bg-[#00696D]">
+        <FinancingForm credit_amount={credit_amount} purpose="1" />
         <Accordion
           title="Syarat & Ketentuan"
           content={
@@ -29,8 +39,6 @@ const Oto = () => {
           }
         />
       </div>
-      <ProductCardList type="oto"></ProductCardList>
-      <PriceForm title="atau, Kamu Bisa Input Harga Sendiri Disini!" />
     </div>
   );
 };
