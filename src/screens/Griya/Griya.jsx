@@ -22,7 +22,7 @@ const Griya = () => {
         title="atau, Kamu Bisa Input Harga Sendiri Disini!"
         setCredit={setCredit}
       />
-      <div className="w-full pb-20 pt-32 min-h-screen relative mx-auto bg-[#00696D]">
+      <div className="w-full pb-20 pt-32 px-4 min-h-screen relative mx-auto bg-[#00696D]">
         <FinancingForm credit_amount={credit_amount} purpose="3" />
 
         <Accordion
