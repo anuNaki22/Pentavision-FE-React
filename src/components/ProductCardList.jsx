@@ -1,24 +1,27 @@
-/* eslint-disable react/prop-types */
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Autoplay, Scrollbar } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import ProductCard from "./ProductCard";
 import { oto, griya } from "../assets/data";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ProductCardList = ({ type, setCredit }) => {
-  let data = [];
-
-  if (type === "oto") {
-    data = oto;
-  } else if (type === "griya") {
-    data = griya;
-  }
+  let data = type === "oto" ? oto : griya;
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
+
+  useEffect(() => {
+    if (swiperInstance && prevRef.current && nextRef.current) {
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]); // Memastikan useEffect hanya berjalan setelah swiperInstance tersedia
 
   return (
     <div className="relative mb-16 mt-16">
@@ -40,24 +43,17 @@ const ProductCardList = ({ type, setCredit }) => {
           <ChevronRight size={30} />
         </button>
         <Swiper
-          modules={[FreeMode, Autoplay, Scrollbar]}
-          spaceBetween={120} // Increase gap between items
-          slidesPerView="auto" // Allow natural width
-          freeMode={{ enabled: true, momentum: false }} // Prevent snapping
-          grabCursor={true} // Enable drag interaction
+          modules={[FreeMode, Navigation, Autoplay, Scrollbar]}
+          spaceBetween={120}
+          slidesPerView="auto"
+          freeMode={{ enabled: true, momentum: false }}
+          grabCursor={true}
           className="pb-10"
-          // navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
-          loop={true} // Enable infinite scrolling
+          loop={true}
           scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => {
-            setTimeout(() => {
-              // swiper.params.navigation.prevEl = prevRef.current;
-              // swiper.params.navigation.nextEl = nextRef.current;
-              // swiper.navigation.init();
-              // swiper.navigation.update();
-            });
-          }}
+          onSwiper={setSwiperInstance} // Simpan instance swiper dengan benar
         >
           {data.map((item, index) => (
             <SwiperSlide key={index} className="!w-auto">
