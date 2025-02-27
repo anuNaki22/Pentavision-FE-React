@@ -37,7 +37,7 @@ const Predict = () => {
   return (
     <>
     <div className="my-0 flex flex-col items-center justify-center">
-      <House size={50} className="absolute top-10 left-10 md:top-30 md:left-30 rounded-[50%] shadow-[0px_2px_8px_0.5px] p-2 hover:transform hover:scale-110 transition ease-in-out" onClick={window.location.href="/"}/>
+      <House size={50} className="absolute top-10 left-10 md:top-30 md:left-30 rounded-[50%] shadow-[0px_2px_8px_0.5px] p-2 hover:transform hover:scale-110 transition ease-in-out" onClick={() => window.location.href="/"}/>
       <div className="flex flex-col items-center mt-20">
         <div className="max-w-[800px] flex-col items-center text-justify self-center">
           <h2
