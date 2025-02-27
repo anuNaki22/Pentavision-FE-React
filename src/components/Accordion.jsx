@@ -1,10 +1,13 @@
 import { useState } from "react";
 
 const Accordion = ({ title, content }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="max-w-full w-full md:w-[600px] lg:w-[1037px] bg-white rounded-lg shadow-lg p-4 md:p-6 lg:p-8 mx-auto">
+    <div
+      className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg 
+    bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 lg:p-10 mx-auto mb-16"
+    >
       {/* Header */}
       <div
         className="flex justify-between items-center cursor-pointer"
