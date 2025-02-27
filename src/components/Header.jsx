@@ -69,7 +69,7 @@ const Header = () => {
             href="/"
             className="font-bold border-b-2 text-[#ED8B00] border-[#ED8B00] block lg:inline"
           >
-            BSI Fund
+            BSI Find
           </a>
           <a href="https://www.bankbsi.co.id/" className="block lg:inline">
             Produk dan Layanan
